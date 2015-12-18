@@ -1,7 +1,7 @@
 # opes project
 
 The other way to follow your projects.
-A simple reporting tool, free and available everywhere, monitoring and more efficient distribution of your schedules.
+A simple reporting tool for Wordpress, to manage and distribute easily your plannings and schedules.
 
 
  --------
