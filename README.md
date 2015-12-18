@@ -1,4 +1,4 @@
-# opes-project
+# opes project
 
 The other way to follow your projects.
 A simple reporting tool, free and available everywhere, monitoring and more efficient distribution of your schedules.
