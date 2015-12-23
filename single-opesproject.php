@@ -24,8 +24,8 @@ get_header(); ?>
 				<h1 class="opHeaderTitle"><?php the_title(); ?></h1>
 			</div>
 			<div class="opHeaderMenu">
-				<!--<button class="opITMenu" id="opITMenu"><img src="<?php //echo plugins_url('opesproject_wplugin/images/menuInfosTache.png'); ?>" alt="Opes Project : Infos Tache" height="50" width="50"></button>-->
-				<button class="opIPMenu" id="opIPMenu"><img src="<?php echo plugins_url('opesproject_wplugin/images/menuInfosProject.png'); ?>" alt="Opes Project : Infos Project" height="50" width="50"></button>
+				<!--<button class="opITMenu" id="opITMenu"><img src="<?php //echo plugins_url('wp_opesproject/images/menuInfosTache.png'); ?>" alt="Opes Project : Infos Tache" height="50" width="50"></button>-->
+				<button class="opIPMenu" id="opIPMenu"><img src="<?php echo plugins_url('wp_opesproject/images/menuInfosProject.png'); ?>" alt="Opes Project : Infos Project" height="50" width="50"></button>
 			</div>
 			<!--<h2><?php// echo $client;?></h2>-->
 			<!--<p><?php //the_content(); ?></p>
@@ -57,7 +57,7 @@ get_header(); ?>
 
 	
 	<div style="position:fixed; padding:0; border:0; width:80%; max-width:345px; height:100%; right:-345px; top:0px; display:block; box-sizing:initial; background:none; background-color:#eaedf1; z-index:9999; transition:all 0.8s ease;" id="opMenuTabsA">
-		<button class="opICMenu opIFMenu"><img src="<?php echo plugins_url('opesproject_wplugin/images/menuInfosClose.png'); ?>" alt="Opes Project : Infos Project" height="34" width="34"></button>
+		<button class="opICMenu opIFMenu"><img src="<?php echo plugins_url('wp_opesproject/images/menuInfosClose.png'); ?>" alt="Opes Project : Infos Project" height="34" width="34"></button>
 		<ul style="background:none; border:none; padding:0; margin:0; border-radius:0;">
 			<li style="background:none; border:none; padding:0; margin:0; border-radius:0; border-right:1px solid #eaedf1; background-color:#fff;"><a href="#tabs-1">Informations</a></li>
 			<!--<li style="background:none; border:none; padding:0; margin:0; border-radius:0; border-right:1px solid #eaedf1; background-color:#fff;"><a href="#tabs-2">Activité</a></li>-->
