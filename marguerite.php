@@ -341,10 +341,10 @@ function opesproject_shortcode_edit(){
 		$resultatAffiche .= '<div style="margin-top:10px;" class="op_blank"></div>';
 		$resultatAffiche .= '<script type="text/javascript" src="https://www.google.com/jsapi"></script>';
 		$resultatAffiche .= '<script>google.load("visualization", "1.1", {packages:["gantt"]});</script>';
-		$resultatAffiche .= '<div style="width:100%; max-width:1100px; margin: 0 auto; left:0; right:0; text-align:center; border-top: solid 1px #eaedf1; float:left; margin-top:40px; box-shadow: 0px -20px 30px -22px rgba(0,0,0,0.10); -webkit-box-shadow: 0px -20px 30px -22px rgba(0,0,0,0.10);">';
-			$resultatAffiche .= '<div style="width:100%; text-align:center; font-size:18px; font-family:Open-sans; padding:3px;">Gantt (save to reload it)</div>';
+		// $resultatAffiche .= '<div style="width:100%; max-width:1100px; margin: 0 auto; left:0; right:0; text-align:center; border-top: solid 1px #eaedf1; float:left; margin-top:40px; box-shadow: 0px -20px 30px -22px rgba(0,0,0,0.10); -webkit-box-shadow: 0px -20px 30px -22px rgba(0,0,0,0.10);">';
+			// $resultatAffiche .= '<div style="width:100%; text-align:center; font-size:18px; font-family:Open-sans; padding:3px;">Gantt (save to reload it)</div>';
 			$resultatAffiche .= '<div style="width:100%; position:relative; padding:0; overflow:hidden; max-width:1100px; margin: 0 auto; left:0; right:0; margin-bottom:25px;" id="chart_Gantt"></div>';
-		$resultatAffiche .= '</div>';
+		// $resultatAffiche .= '</div>';
 		
 		$resultatAffiche .= '<textarea class="wp-editor-area" style="height: 120px; display:none; width:100%; max-width:100%; max-height:240px;" cols="40" name="op_gantt" id="gantt">'.$op_gantt.'</textarea>';
 		$resultatAffiche .= '<textarea class="wp-editor-area" style="height: 120px; display:none; width:100%; max-width:100%; max-height:240px;" cols="40" name="op_order" id="op_order">'.$op_order.'</textarea>';
