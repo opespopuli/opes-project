@@ -212,7 +212,7 @@ jQuery(document).ready(function($){
 	}
 	
 	function op_drawGantt(type){
-		if ((($("#chart_Gantt").length != 0) && ($("#op_infosGantt").length != 0) && (document.getElementById("op_infosGantt").innerHTML != '')) || (($("#chart_Gantt").length != 0) && ($("#gantt").length != 0) && (document.getElementById("gantt").innerHTML != ''))) {
+		if ((($("#chart_Gantt").length != 0) && ($("#op_infosGantt").length != 0) && (document.getElementById("op_infosGantt").innerHTML != '')) || (($("#chart_Gantt").length != 1) && ($("#gantt").length != 0) && (document.getElementById("gantt").innerHTML != ''))) {
 			
 			//google.load("visualization", "1.1", {packages:["gantt"]});
 			//google.setOnLoadCallback(drawChart);
