@@ -429,7 +429,7 @@ function marguerite_ajax_init(){
 	wp_register_script('margueriteAjax', plugins_url('js/margueriteAjax.js', __FILE__), array('jquery'));
 	wp_enqueue_script( 'my-plugin1', 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js', array('jquery'));
 	wp_enqueue_script('custom-script',plugins_url('js/jquery.easypiechart.js', __FILE__), array('jquery'));
-	wp_register_style( 'my-plugin3', plugins_url('opesproject_wplugin/Css/marguerite.css' ) );
+	wp_register_style( 'my-plugin3', plugins_url('wp_opesproject/Css/marguerite.css' ) );
 	
 	wp_enqueue_script('margueriteAjax');
 	wp_enqueue_style('my-plugin3');
@@ -443,7 +443,7 @@ function marguerite_ajax_init(){
 	wp_register_script('op_jqueryList_script', plugins_url('/js/jquery.nestable.js', __FILE__), array('jquery'));
 	wp_enqueue_script('op_jqueryList_script' );
 	
-	wp_register_style( 'op_jqueryList_css', plugins_url('opesproject_wplugin/Css/nestable.css'));
+	wp_register_style( 'op_jqueryList_css', plugins_url('wp_opesproject/Css/nestable.css'));
     wp_enqueue_style( 'op_jqueryList_css' );
 	
 	/*wp_register_script('margueriteAjaxAdmin', plugins_url('/js/margueriteAjaxAdmin.js', __FILE__), array('jquery'));
@@ -1049,9 +1049,9 @@ function displayProject($idProject, $projectAffichage, $projectTache){
 													}
 													if($tDonneesChart[$q][2]!="Jalon"){
 														if($tacheTemp==0){
-															print_r('<div class="chart chart'.$etatTacheCouleur.'" data-percent="'.($tDonneesChart[$q][8]).'"  onclick="testonsb('.$idTemp.', '.$tDonneesChart[$q][0].', \'marguerite\')" style="cursor:pointer; background-image: url(\''.plugins_url('opesproject_wplugin/images/taskBackground.png').'\'); background-repeat:no-repeat; background-position: 50%; background-size:91px; min-width:250px; background-color:#blue; width:'.$pourcentageLargeur.'%;">');
+															print_r('<div class="chart chart'.$etatTacheCouleur.'" data-percent="'.($tDonneesChart[$q][8]).'"  onclick="testonsb('.$idTemp.', '.$tDonneesChart[$q][0].', \'marguerite\')" style="cursor:pointer; background-image: url(\''.plugins_url('wp_opesproject/images/taskBackground.png').'\'); background-repeat:no-repeat; background-position: 50%; background-size:91px; min-width:250px; background-color:#blue; width:'.$pourcentageLargeur.'%;">');
 														}else{
-															print_r('<div class="chart chart'.$etatTacheCouleur.'" data-percent="'.($tDonneesChart[$q][8]).'"  onclick="manageOverlay(\'b\')" style="cursor:pointer; background-image: url(\''.plugins_url('opesproject_wplugin/images/taskBackground.png').'\'); background-repeat:no-repeat; background-position: 50% 10px; background-size:91px; min-width:250px; background-color:#blue; width:'.$pourcentageLargeur.'%;">');
+															print_r('<div class="chart chart'.$etatTacheCouleur.'" data-percent="'.($tDonneesChart[$q][8]).'"  onclick="manageOverlay(\'b\')" style="cursor:pointer; background-image: url(\''.plugins_url('wp_opesproject/images/taskBackground.png').'\'); background-repeat:no-repeat; background-position: 50% 10px; background-size:91px; min-width:250px; background-color:#blue; width:'.$pourcentageLargeur.'%;">');
 														}
 																print_r('<div class="percentColor'.$etatTacheCouleur.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:-5px; font-size:11px; margin-left:50%; padding-left:60px; line-height:12px; color:#9ea7b3; font-family:open sans;">'.$etatTache2.'<br /><!--<span style="font-size:10px;">'.$etatTache2.'</span>--><progress class="progressBar'.$etatTacheCouleur.'" style="-webkit-progress-value {background: #afa;}" value="'.$etatTacheTemps.'" max="'.$etatTacheTempsUtilise.'">'.($tDonneesChart[$q][8]).'%</progress></div>');
 																if($tDonneesChart[$q][15] != 0){
@@ -1062,9 +1062,9 @@ function displayProject($idProject, $projectAffichage, $projectTache){
 														print_r('</div>');
 													}else{
 														if($tacheTemp==0){
-															print_r('<div class="chart" data-percent="'.($pourcentageTemp).'"  onclick="testonsb('.$idTemp.', '.$tDonneesChart[$q][0].', \'marguerite\')" style="cursor:pointer; min-width:250px; width:'.$pourcentageLargeur.'%; background-image:url(\''.plugins_url('opesproject_wplugin/images/jalonBackground'.$etatJalon.'.png').'\'); background-repeat:no-repeat; background-position:60%; background-size:110px;">');
+															print_r('<div class="chart" data-percent="'.($pourcentageTemp).'"  onclick="testonsb('.$idTemp.', '.$tDonneesChart[$q][0].', \'marguerite\')" style="cursor:pointer; min-width:250px; width:'.$pourcentageLargeur.'%; background-image:url(\''.plugins_url('wp_opesproject/images/jalonBackground'.$etatJalon.'.png').'\'); background-repeat:no-repeat; background-position:60%; background-size:110px;">');
 														}else{
-															print_r('<div class="chart" data-percent="'.($pourcentageTemp).'"  onclick="manageOverlay(\'b\')" style="cursor:pointer; min-width:250px; width:'.$pourcentageLargeur.'%; background-image:url(\''.plugins_url('opesproject_wplugin/images/jalonBackground'.$etatJalon.'.png').'\'); background-repeat:no-repeat; background-position:50%; background-size:110px; padding-right:27px;">');
+															print_r('<div class="chart" data-percent="'.($pourcentageTemp).'"  onclick="manageOverlay(\'b\')" style="cursor:pointer; min-width:250px; width:'.$pourcentageLargeur.'%; background-image:url(\''.plugins_url('wp_opesproject/images/jalonBackground'.$etatJalon.'.png').'\'); background-repeat:no-repeat; background-position:50%; background-size:110px; padding-right:27px;">');
 														}
 																print_r('<div class="percentColor'.$etatTacheCouleur.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:10px; font-size:12px; margin-left:50%; padding-left:55px; line-height:12px; color:#9ea7b3; font-family:open sans;">Jalon<br /></div>');
 																print_r('<div class="percentColor'.$etatTacheCouleur.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:85px; font-size:12px; margin-left:50%; padding-left:55px; line-height:12px; color:#9ea7b3; font-family:open sans; text-transform:lowercase;">'.$tDonneesChart[$q][5]->format('j M Y').'</div>');
@@ -1137,7 +1137,7 @@ function displayProject($idProject, $projectAffichage, $projectTache){
 															$etatJalonN2Texte = "Wait";
 														}
 														if($tDonneesChartN2[$q][2]!="Jalon"){
-															print_r('<div class="chartN2 chartN2'.$etatTacheCouleurN2.'" data-percent="'.($tDonneesChartN2[$q][8]).'"  onclick="testonsb('.$idTemp.', '.$tDonneesChartN2[$q][0].', \'marguerite\')" style="cursor:pointer; background-image: url(\''.plugins_url('opesproject_wplugin/images/taskBackground.png').'\'); background-repeat:no-repeat; background-position: 50%; background-size:74px; min-width:180px; background-color:#blue; width:'.$pourcentageLargeur.'%;">');
+															print_r('<div class="chartN2 chartN2'.$etatTacheCouleurN2.'" data-percent="'.($tDonneesChartN2[$q][8]).'"  onclick="testonsb('.$idTemp.', '.$tDonneesChartN2[$q][0].', \'marguerite\')" style="cursor:pointer; background-image: url(\''.plugins_url('wp_opesproject/images/taskBackground.png').'\'); background-repeat:no-repeat; background-position: 50%; background-size:74px; min-width:180px; background-color:#blue; width:'.$pourcentageLargeur.'%;">');
 																print_r('<div class="percentColor'.$etatTacheCouleurN2.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:-15px; font-size:11px; margin-left:50%; padding-left:60px; line-height:12px; color:#9ea7b3; font-family:open sans;">'.$etatTache2N2.'<br /><!--<span style="font-size:10px;">'.$etatTache2N2.'</span>--><progress class="progressBar'.$etatTacheCouleurN2.'" style="-webkit-progress-value {background: #afa;}" value="'.$etatTacheN2Temps.'" max="'.$etatTacheN2TempsUtilise.'">'.($tDonneesChartN2[$q][8]).'%</progress></div>');
 																if($tDonneesChartN2[$q][15] != 0){
 																	print_r('<div class="percentColor'.$etatTacheCouleurN2.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:50px; font-size:11px; margin-left:50%; padding-left:60px; line-height:12px; color:#9ea7b3; font-family:open sans;">tasks: '.$tDonneesChartN2[$q][16].'/'.$tDonneesChartN2[$q][15].'<br /><!--<span style="font-size:10px;">Tâches: '.$tDonneesChartN2[$q][16].'/'.$tDonneesChartN2[$q][15].'</span>--><progress class="progressBar'.$etatTacheCouleurN2.'" value="'.$tDonneesChartN2[$q][16].'" max="'.$tDonneesChartN2[$q][15].'">'.($tDonneesChartN2[$q][8]).'%</progress></div>');
@@ -1152,7 +1152,7 @@ function displayProject($idProject, $projectAffichage, $projectTache){
 																	//print_r('<div class="tacheN2 percentColor'.$etatTacheCouleurN2.'">'.$tDonneesChartN2[$q][3].'</div>');
 															//print_r('</div>');
 														}else{
-															print_r('<div class="chartN2 data-percent="'.$pourcentageTempN2.'" data-percent2="'.($tDonneesChartN2[$q][8]).'" onclick="testonsb('.$idTemp.', '.$tDonneesChartN2[$q][0].', \'marguerite\');" style="cursor:pointer; background-image:url(\''.plugins_url('opesproject_wplugin/images/jalonBackground'.$etatJalonN2.'.png').'\'); background-repeat:no-repeat; background-position:50%; background-size:110px; position:relative; /*top:'.((30*sin(M_PI*$pourcentagePI))+20).'%; left:'.((20*cos(M_PI*$pourcentagePI))+48).'%; width:110px;*//* width:100%; min-width:100px; max-width:180px;">');
+															print_r('<div class="chartN2 data-percent="'.$pourcentageTempN2.'" data-percent2="'.($tDonneesChartN2[$q][8]).'" onclick="testonsb('.$idTemp.', '.$tDonneesChartN2[$q][0].', \'marguerite\');" style="cursor:pointer; background-image:url(\''.plugins_url('wp_opesproject/images/jalonBackground'.$etatJalonN2.'.png').'\'); background-repeat:no-repeat; background-position:50%; background-size:110px; position:relative; /*top:'.((30*sin(M_PI*$pourcentagePI))+20).'%; left:'.((20*cos(M_PI*$pourcentagePI))+48).'%; width:110px;*//* width:100%; min-width:100px; max-width:180px;">');
 																	print_r('<div class="percentColor'.$etatTacheCouleurN2.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:10px; font-size:11px; margin-left:50%; padding-left:55px; line-height:12px; color:#9ea7b3; font-family:open sans;">Jalon</span></div>');
 																	print_r('<div class="percentColor'.$etatTacheCouleurN2.'" style="font-weight:normal; position:absolute; text-align:left; width:50%; top:85px; font-size:11px; margin-left:50%; padding-left:55px; line-height:12px; color:#9ea7b3; font-family:open sans; text-transform:lowercase;">'.$tDonneesChartN2[$q][5]->format('j M Y').'</span></div>');
 																	print_r('<div style=" color:#fff; display:inline-block; line-height:110px; z-index:2; padding-top:2px; font-size:23px; font-weight:normal; font-family:open sans;" class="percentColor'.$etatTacheCouleur.'">'.$etatJalonTexte.'</div>');
@@ -1384,7 +1384,7 @@ function displayProject($idProject, $projectAffichage, $projectTache){
 									echo '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden; position:absolute; width:'.(($nombreJoursTache/($nbrJoursAffiches+0.3))*100).'%; text-align:center; left:'.((($nbrJoursComptes)/($nbrJoursAffiches+0.3))*100).'%; color:#5e6d81; margin-top:2px; font-size:14px; font-weight:normal; font-family:open sans;"><strong>'.($tDonneesChart[$gta][8]).'</strong>%</div>';
 									//echo $tDonneesChart[$gta][3].'  -  '.date_format($dateDebutTache, 'j M Y').' / '.date_format($dateFinTache, 'j M Y');
 								}else{
-									echo '<div class="progressGantt, progressBar'.$etatTacheCouleurGantt.'" style="background-image:url(\''.plugins_url('opesproject_wplugin/images/jalonBackground'.$etatTacheCouleurGantt.'.png').'\'); background-repeat:no-repeat; background-position:0px; background-color:transparent; background-size:'.$tailleTacheGantt.'px; cursor:pointer; position:absolute; height:'.$tailleTacheGantt.'px; margin-left:'.((($nbrJoursComptes-0.6)/($nbrJoursAffiches+0.3))*100).'%; width:'.$tailleTacheGantt.'px">&nbsp;</div>';
+									echo '<div class="progressGantt, progressBar'.$etatTacheCouleurGantt.'" style="background-image:url(\''.plugins_url('wp_opesproject/images/jalonBackground'.$etatTacheCouleurGantt.'.png').'\'); background-repeat:no-repeat; background-position:0px; background-color:transparent; background-size:'.$tailleTacheGantt.'px; cursor:pointer; position:absolute; height:'.$tailleTacheGantt.'px; margin-left:'.((($nbrJoursComptes-0.6)/($nbrJoursAffiches+0.3))*100).'%; width:'.$tailleTacheGantt.'px">&nbsp;</div>';
 									echo '<div style="text-overflow:ellipsis; white-space:nowrap; overflow:hidden; position:absolute; width:'.(($nombreJoursTache/($nbrJoursAffiches+0.3))*100).'%; text-align:left; left:'.((($nbrJoursComptes+0.3)/($nbrJoursAffiches+0.3))*100).'%; color:#5e6d81; margin-top:-17px; font-size:16px; font-weight:normal; font-family:open sans;">'.$tDonneesChart[$gta][3].'</div>';
 								}
 							}
@@ -1439,7 +1439,7 @@ function displayProject($idProject, $projectAffichage, $projectTache){
 				}
 			
 				echo '<div style="position:fixed; padding:0; border:0; width:80%; max-width:345px; height:100%; right:-345px; top:0px; display:block; box-sizing:initial; background:none; background-color:#eaedf1; z-index:9999; transition:all 0.8s ease;" id="opMenuTabsB">';
-					echo '<button class="opICMenu opIFMenuB"><img src="'.plugins_url('opesproject_wplugin/images/menuInfosClose.png').'" alt="Opes Project : Infos Project" height="34" width="34"></button>';
+					echo '<button class="opICMenu opIFMenuB"><img src="'.plugins_url('wp_opesproject/images/menuInfosClose.png').'" alt="Opes Project : Infos Project" height="34" width="34"></button>';
 					echo '<ul style="background:none; border:none; padding:0; margin:0; border-radius:0;">';
 						echo '<li style="background:none; border:none; padding:0; margin:0; border-radius:0; border-right:1px solid #eaedf1; background-color:#fff;"><a href="#tabs-4">Task</a></li>';
 						echo '<!--<li style="background:none; border:none; padding:0; margin:0; border-radius:0; border-right:1px solid #eaedf1; background-color:#fff;"><a href="#tabs-5">Alertes</a></li>-->';
