@@ -11,7 +11,9 @@ License: GPL2
 */
 
 $op_pageList = "/dashboard";
+$op_pageList =  get_option('opesproject_dashboard_title');
 $op_pageEdit = "/edition-de-projet";
+$op_pageEdit =  get_option('opesproject_dashboard_edit');
 
 /* Shortcode */
 add_action('init', 'marguerite_shortcode_init');
@@ -24,6 +26,8 @@ function marguerite_shortcode_init() {
 /* Initialisation des données */
 function opesproject_shortcode_list(){
 		global $post;
+		global $op_pageList;
+		global $op_pageEdit;
 		
 		$resultatAffiche = '';
 		
@@ -49,7 +53,7 @@ function opesproject_shortcode_list(){
 			$loop = new WP_Query( $args );
 			//Display the contents
 			
-			$resultatAffiche .= '<a style="color:#9EA6A4;" class="op_textAdmin" href="/edition-de-projet"><button class="op_btnMenu" style="border-bottom:#FF8964 5px solid; margin:15px 0px;">Add a project</button></a>';
+			$resultatAffiche .= '<a style="color:#9EA6A4;" class="op_textAdmin" href="'.$op_pageEdit.'"><button class="op_btnMenu" style="border-bottom:#FF8964 5px solid; margin:15px 0px;">Add a project</button></a>';
 			$resultatAffiche .= '<ul style="margin-top:10px; padding:0;">';
 			while ( $loop->have_posts() ) : $loop->the_post();
 				
@@ -61,7 +65,7 @@ function opesproject_shortcode_list(){
 				$resultatAffiche .= '</p>';
 				
 				//$resultatAffiche .= '<form style="display:inline; float:right;" action="/dashboard" method="post"><input type="hidden" name="op_status" value="delete" id="status"><input type="hidden" name="op_id" value="'.$post->ID.'"><input class="op_btnMenu" type="submit" value="Delete"></form>';
-				$resultatAffiche .= '<form style="display:inline; float:right;" action="/edition-de-projet" method="post"><input type="hidden" name="op_status" value="live" id="status"><input type="hidden" name="op_id" value="'.$post->ID.'"><input class="op_btnMenu" type="submit" value="Edit this project"></form>';
+				$resultatAffiche .= '<form style="display:inline; float:right;" action="'.$op_pageEdit.'" method="post"><input type="hidden" name="op_status" value="live" id="status"><input type="hidden" name="op_id" value="'.$post->ID.'"><input class="op_btnMenu" type="submit" value="Edit this project"></form>';
 				$resultatAffiche .= '<div style="clear:both;"></div>';
 				
 				$resultatAffiche .= '</li>';
@@ -84,6 +88,8 @@ function opesproject_shortcode_list(){
 function opesproject_shortcode_edit(){
 
 		global $post;
+		global $op_pageList;
+		global $op_pageEdit;
 		
 		/*get_post_meta($post->ID, "client", $_POST["client"]);
 		get_post_meta($post->ID, "av_general", $_POST["av_general"]);
@@ -295,7 +301,7 @@ function opesproject_shortcode_edit(){
 			$titre = "Edit a project";
 			$txt_voirProjet = '<a style="color:#9EA6A4;" target="_blank" href="/opesproject/'.$slug.'" class="op_textAdmin"><button class="op_btnMenu" style="margin:5px 10px; float:left; border-bottom:#FF8964 5px solid;">See the project</button></a>';
 			$txt_bouton = "Save the project";
-			$txt_delete = '<form style="display:inline;" action="/dashboard" method="post"><input type="hidden" name="op_status" value="delete" id="status"><input type="hidden" name="op_id" value="'.$id.'"><input class="op_btnMenu op_textAdmin" style="float:right;" type="submit" value="Delete"></form>';
+			$txt_delete = '<form style="display:inline;" action="'.$op_pageList.'" method="post"><input type="hidden" name="op_status" value="delete" id="status"><input type="hidden" name="op_id" value="'.$id.'"><input class="op_btnMenu op_textAdmin" style="float:right;" type="submit" value="Delete"></form>';
 		}else{
 			/* Nouveau projet */
 			$titre = "Add a project";
@@ -316,7 +322,7 @@ function opesproject_shortcode_edit(){
 		$resultatAffiche .= '<div style="margin:30px;">';
 		$resultatAffiche .= '<h1 class="op_textAdmin" style="font-size:25px; margin-top:20px;">'.$titre.'</h1>';
 		$resultatAffiche .= $txt_voirProjet;
-		$resultatAffiche .= '<a style="color:#9EA6A4;" href="/dashboard" class="op_textAdmin"><button class="op_btnMenu" style="margin:5px 10px; float:left;">View projects list</button></a>';
+		$resultatAffiche .= '<a style="color:#9EA6A4;" href="'.$op_pageList.'" class="op_textAdmin"><button class="op_btnMenu" style="margin:5px 10px; float:left;">View projects list</button></a>';
 		$resultatAffiche .= '<div class="op_blank"></div>';
 		$resultatAffiche .= '<form id="op_formProject"  action="#" method="post">';
 		$resultatAffiche .= '<input type="hidden" name="op_status" value="'.$status.'" id="status">';
@@ -478,16 +484,17 @@ function opesproject_admin_options(){
 			<?php @do_settings_fields('opesproject-group'); ?>
 			<table class="form-table">
 				<tr valign="top">
-					<th scope="row"><label for="opesproject_dashboard_title">Dashboard Title</label></th>
+					<th scope="row"><label for="opesproject_dashboard_title">Display opes projects</label></th>
 					<td>
 						<input type="text" name="opesproject_dashboard_title" id="opesproject_dashboard_title" value="<?php echo get_option('opesproject_dashboard_title'); ?>" />
-						<br /><small>le titre à afficher</small>
+						<br /><small>The URL of the page where the shortcode "[opesproject_list]" is placed. <strong>"/my-page-list"</strong></small>
 					</td>
 				</tr>
 				<tr valign="top">
-					<th scope="row"><label for="opesproject_test">Test</label></th>
+					<th scope="row"><label for="opesproject_dashboard_edit">Edit opes projects</label></th>
 					<td>
-						<div name="opesproject_test" id="opesproject_test" value="cool de ouf">sisi c'est ouf !</div>
+						<input type="text" name="opesproject_dashboard_edit" id="opesproject_dashboard_edit" value="<?php echo get_option('opesproject_dashboard_edit'); ?>" />
+						<br /><small>The URL of the page where the shortcode "[opesproject_edit]" is placed. <strong>"/my-page-edition"</strong></small>
 					</td>
 				</tr>
 			</table>
@@ -499,11 +506,10 @@ function opesproject_admin_options(){
 /* -- Admin register setting -- */
 function opesproject_admin_init(){
 	register_setting('opesproject-group', 'opesproject_dashboard_title');
-	register_setting('opesproject-group', 'opesproject_test');
+	register_setting('opesproject-group', 'opesproject_dashboard_edit');
 }
 
 /* Projets Admin */
-
 add_action( 'init', 'codex_opesproject_init' );
 add_action('add_meta_boxes', 'add_meta_infos');
 add_action('save_post', 'save_details_projects');
